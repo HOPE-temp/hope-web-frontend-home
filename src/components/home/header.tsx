@@ -138,28 +138,3 @@ export default function Header() {
 		</header>
 	)
 }
-
-/*export const metadata = {
-    title: "HOPE Arequipa",
-    description: "Adopta, dona y ayuda a los animales en Arequipa",
-    openGraph: {
-        title: "HOPE Arequipa",
-        description: "Adopta, dona y ayuda a los animales en Arequipa",
-        url: "https://hopearequipa.com",
-        siteName: "HOPE Arequipa",
-        type: "website",
-        images: [
-            {
-                url: "/og-image.jpg",
-                width: 1200,
-                height: 630,
-                alt: "HOPE Arequipa - Adopta y Dona",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "HOPE Arequipa",
-        description: "Adopta, dona y ayuda a los animales en Arequipa",
-    },
-}*/

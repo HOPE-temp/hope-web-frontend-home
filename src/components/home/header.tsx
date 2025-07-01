@@ -45,7 +45,7 @@ export default function Header() {
 							Mascotas
 						</Link>
 						<Link
-							href="/adopcion"
+							href="/adoption"
 							className="text-gray-700 hover:text-teal-600 transition-colors"
 						>
 							Adopción

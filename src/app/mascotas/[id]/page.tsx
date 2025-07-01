@@ -14,6 +14,7 @@ import Header from "@/components/home/header"
 import Footer from "@/components/home/footer"
 import { notFound } from "next/navigation"
 import { usePetById } from "@/hooks/usePetById"
+import { useState } from "react"
 
 interface PageProps {
   params: {
@@ -23,6 +24,7 @@ interface PageProps {
 
 export default function PetDetailPage({ params }: PageProps) {
   const { pet, loading, error } = usePetById(params.id)
+  const [activeImg, setActiveImg] = useState(0)
 
   if (loading) return <div className="p-8 text-center">Cargando mascota...</div>
   if (error || !pet) {
@@ -30,11 +32,13 @@ export default function PetDetailPage({ params }: PageProps) {
     return null
   }
 
+  const images = pet.images && pet.images.length > 0 ? pet.images : ["/placeholder.svg"]
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
       <Header />
       <div className="container mx-auto px-4 py-8">
-        {/* Breadcrumb */}
+        
         <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
           <Link href="/mascotas" className="hover:text-teal-600 flex items-center">
             <ArrowLeft className="h-4 w-4 mr-1" />
@@ -44,20 +48,63 @@ export default function PetDetailPage({ params }: PageProps) {
           <span>{pet.nickname}</span>
         </div>
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Columna Principal - Imágenes y Descripción */}
+          {/* Card de mascota - Imágenes y Descripción */}
           <div className="lg:col-span-2 space-y-6">
             <Card>
-              <CardContent className="p-0 flex justify-center">
+              <CardContent className="p-0 flex flex-col items-center">
                 <div className="relative w-full max-w-xl aspect-[4/3] bg-gray-100 rounded-t-lg overflow-hidden flex items-center justify-center">
                   <Image
-                    src={pet.images?.[0] || "/placeholder.svg"}
-                    alt={pet.nickname}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-t-lg"
+                    src={images[activeImg]}
+                    alt={`${pet.nickname} foto ${activeImg + 1}`}
+                    width={400}
+                    height={300}
+                    className="rounded-t-lg object-cover"
+                    style={{ minWidth: 300, minHeight: 225 }}
                     sizes="(max-width: 1024px) 100vw, 600px"
-                  />                  
+                  />
+                  {/* Botón anterior */}
+                  {images.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => setActiveImg((prev) => (prev === 0 ? images.length - 1 : prev - 1))}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow"
+                        aria-label="Anterior"
+                      >
+                        &#8592;
+                      </button>
+                      {/* Botón siguiente */}
+                      <button
+                        onClick={() => setActiveImg((prev) => (prev === images.length - 1 ? 0 : prev + 1))}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow"
+                        aria-label="Siguiente"
+                      >
+                        &#8594;
+                      </button>
+                    </>
+                  )}
                 </div>
+                {/* Miniaturas */}
+                {images.length > 1 && (
+                  <div className="flex gap-2 mt-4 justify-center">
+                    {images.map((img: string, idx: number) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveImg(idx)}
+                        className={`border-2 rounded-lg overflow-hidden ${activeImg === idx ? "border-teal-600" : "border-transparent"}`}
+                        style={{ padding: 0 }}
+                        aria-label={`Ver imagen ${idx + 1}`}
+                      >
+                        <Image
+                          src={img}
+                          alt={`Miniatura ${idx + 1}`}
+                          width={60}
+                          height={45}
+                          className="object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </CardContent>
             </Card>
             <Card>
@@ -69,7 +116,7 @@ export default function PetDetailPage({ params }: PageProps) {
               </CardContent>
             </Card>
           </div>
-          {/* Sidebar - Información y Contacto */}
+          {/* Crsd de mascota- Información y Contacto */}
           <div className="space-y-6">
             <Card>
               <CardHeader>

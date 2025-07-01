@@ -27,16 +27,8 @@ export default function Footer() {
                   Adopción
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Donaciones
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Voluntariado
-                </Link>
-              </li>
+              
+              
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
                   Historias
@@ -78,7 +70,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+51 XXX XXX XXX</span>
+                <span>+51 989 769 292</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
@@ -89,7 +81,7 @@ export default function Footer() {
         </div>
         <Separator className="my-8 bg-gray-800" />
         <div className="text-center text-gray-400">
-          <p>&copy; 2024 HOPE Arequipa. Todos los derechos reservados.</p>
+          <p>&copy; 2025 HOPE Arequipa. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

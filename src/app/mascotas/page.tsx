@@ -22,7 +22,7 @@ export default function MascotasPage() {
   const [sizeFilter, setSizeFilter] = useState("todos")
   const [genderFilter, setGenderFilter] = useState("todos")  
 
-  // Mapear datos del backend a los filtros y UI
+  
   const filteredPets = pets.filter((pet) => {
     const matchesSearch =
       pet.nickname?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -56,7 +56,7 @@ export default function MascotasPage() {
         </div>
       </section>
 
-      {/* Filters */}
+      {/* Filtros */}
       <section className="py-8 bg-white shadow-sm">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-6 gap-4 items-end">
@@ -116,7 +116,7 @@ export default function MascotasPage() {
         </div>
       </section>
 
-      {/* Pet Grid */}
+      {/* mascota catalogo */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="mb-6">
@@ -140,7 +140,7 @@ export default function MascotasPage() {
                       height={300}
                       className="w-full h-64 object-cover"
                     />
-                    {/* No hay campo urgente */}
+                    {/* */}
                     <Button size="icon" variant="secondary" className="absolute top-3 right-3 bg-white/90 hover:bg-white">
                       <Heart className="h-4 w-4" />
                     </Button>
@@ -174,7 +174,7 @@ export default function MascotasPage() {
                           ? "Grande"
                           : pet.size}
                       </Badge>
-                      {/* No hay campo vaccinated */}
+                      {/* */}
                       {pet.isSterilized && (
                         <Badge variant="secondary" className="text-xs bg-blue-100 text-blue-800">
                           Esterilizado

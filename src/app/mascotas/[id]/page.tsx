@@ -34,7 +34,7 @@ export default function PetDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
       <Header />
       <div className="container mx-auto px-4 py-8">
-        {/* Breadcrumb */}
+        
         <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
           <Link href="/mascotas" className="hover:text-teal-600 flex items-center">
             <ArrowLeft className="h-4 w-4 mr-1" />
@@ -44,7 +44,7 @@ export default function PetDetailPage({ params }: PageProps) {
           <span>{pet.nickname}</span>
         </div>
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Columna Principal - Imágenes y Descripción */}
+          {/* Card de mascota - Imágenes y Descripción */}
           <div className="lg:col-span-2 space-y-6">
             <Card>
               <CardContent className="p-0 flex justify-center">
@@ -69,7 +69,7 @@ export default function PetDetailPage({ params }: PageProps) {
               </CardContent>
             </Card>
           </div>
-          {/* Sidebar - Información y Contacto */}
+          {/* Crsd de mascota- Información y Contacto */}
           <div className="space-y-6">
             <Card>
               <CardHeader>

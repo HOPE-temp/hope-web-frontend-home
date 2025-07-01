@@ -71,40 +71,6 @@ export default function Header() {
 							Contacto
 						</Link>
 					</nav>
-                    {/* Navvbar */}
-                    <nav className="hidden md:flex space-x-6">
-                        <Link
-                            href="home/#inicio"
-                            className="text-gray-700 hover:text-teal-600 transition-colors"
-                        >
-                            Inicio
-                        </Link>
-                        <Link
-                            href="home/#nosotros"
-                            className="text-gray-700 hover:text-teal-600 transition-colors"
-                        >
-                            Nosotros
-                        </Link>
-                        <Link
-                            href="/mascotas"
-                            className="text-gray-700 hover:text-teal-600 transition-colors"
-                        >
-                            Mascotas
-                        </Link>
-                        <Link
-                            href="/adopcion"
-                            className="text-gray-700 hover:text-teal-600 transition-colors"
-                        >
-                            Adopción
-                        </Link>
-                        
-                        <Link
-                            href="home/#contacto"
-                            className="text-gray-700 hover:text-teal-600 transition-colors"
-                        >
-                            Contacto
-                        </Link>
-                    </nav>
 
                     {/* Navbar mobile */}
                     <div className="md:hidden">

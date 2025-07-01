@@ -10,13 +10,14 @@ import SuccessStory from "@/components/home/success-story"
 import ActivityCard from "@/components/home/activity-card"
 import ContactForm from "@/components/home/contact-form"
 import ContactMap from "@/components/home/contact-map"
-import Link from "next/link"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
+      {/* Header */}
       <Header />
 
+      {/* Hero Section */}
       <section id="inicio" className="py-20 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -34,25 +35,25 @@ export default function HomePage() {
                 adopción a más de <strong>13,000 animales</strong> en condiciones deplorables en Arequipa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/mascotas" passHref>
-                  <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900">
-                    <PawPrint className="h-5 w-5 mr-2" />
-                    Ver Mascotas
-                  </Button>
-                </Link>
-                <Link href="#contacto" passHref>
-                  <Button size="lg" className="border-white text-white hover:bg-white hover:text-teal-600">
-                    Contactanos
-                  </Button>
-                </Link>
+                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900">
+                  <PawPrint className="h-5 w-5 mr-2" />
+                  Ver Mascotas
+                </Button>
+                <Button
+                  size="lg"
+                  
+                  className="border-white text-white hover:bg-white hover:text-teal-600"
+                >
+                  Contactanos
+                </Button>
               </div>
             </div>
             <div className="relative">
               <Image
-                src="/images/mascotas01.png"
+                src="/images/albergue.jpg"
                 alt="Perros rescatados en HOPE Arequipa"
-                width={500}
-                height={400}
+                width={600}
+                height={500}
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
@@ -96,7 +97,7 @@ export default function HomePage() {
             <StatsCard
               icon={<Users className="h-8 w-8 text-purple-600" />}
               value="100%"
-              label="Confiable y Transparente"
+              label="Autofinanciado"
               bgColor="bg-purple-100"
             />
           </div>
@@ -109,7 +110,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/images/hania-history.jpg"
+                src="/placeholder.svg?height=400&width=500"
                 alt="Hania Rodriguez, cofundadora de HOPE"
                 width={500}
                 height={400}
@@ -209,7 +210,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Historias de Éxito 
+      {/* Historias de Éxito */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -240,23 +241,28 @@ export default function HomePage() {
             />
           </div>
         </div>
-      </section>*/}
+      </section>
 
-      {/* Llamado a la Acción */}
+      {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">¡Únete a Nuestra Misión!</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Cada adopción, cada acto de amor marca la diferencia en la vida de un animal que necesita
+            Cada donación, cada adopción, cada acto de amor marca la diferencia en la vida de un animal que necesita
             nuestra ayuda. Sé parte del cambio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
             <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900">
+              <Heart className="h-5 w-5 mr-2" />
+              Donar Ahora
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600">
               <PawPrint className="h-5 w-5 mr-2" />
               Ver Adopciones
             </Button>
-    
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-teal-600">
+              Ser Voluntario
+            </Button>
           </div>
         </div>
       </section>
@@ -275,6 +281,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Footer */}
       <Footer />
     </div>
   )

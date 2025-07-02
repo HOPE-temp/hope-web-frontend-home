@@ -204,7 +204,7 @@ export default function MascotasPage() {
                     <div className="flex gap-2 pt-2">
                       <Button className="flex-1 bg-teal-600 hover:bg-teal-700">
                         <PawPrint className="h-4 w-4 mr-2" />
-                        Adoptar
+                          <Link href={`/adoption`}>Adoptar</Link>
                       </Button>
                       <Button variant="outline" className="flex-1" asChild>
                         <Link href={`/mascotas/${pet.id}`}>Ver Más</Link>

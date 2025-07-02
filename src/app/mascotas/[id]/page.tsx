@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -23,8 +24,16 @@ interface PageProps {
 }
 
 export default function PetDetailPage({ params }: PageProps) {
-  const { pet, loading, error } = usePetById(params.id)
+  const { id } = params
+  const { pet, loading, error } = usePetById(id)
   const [activeImg, setActiveImg] = useState(0)
+  const [birthdateStr, setBirthdateStr] = useState("Desconocido")
+
+  useEffect(() => {
+    if (pet?.birthdate) {
+      setBirthdateStr(new Date(pet.birthdate).toLocaleDateString("es-ES"))
+    }
+  }, [pet?.birthdate])
 
   if (loading) return <div className="p-8 text-center">Cargando mascota...</div>
   if (error || !pet) {
@@ -134,7 +143,7 @@ export default function PetDetailPage({ params }: PageProps) {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm font-medium text-gray-500">Nacimiento</p>
-                    <p className="text-lg">{pet.birthdate ? new Date(pet.birthdate).toLocaleDateString("es-ES") : "Desconocido"}</p>
+                    <p className="text-lg">{birthdateStr}</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-500">Esterilizado</p>

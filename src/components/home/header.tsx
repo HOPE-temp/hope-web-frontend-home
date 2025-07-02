@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useState } from "react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import Image from "next/image"
 
@@ -76,6 +76,8 @@ export default function Header() {
                                 </Button>
                             </SheetTrigger>
                             <SheetContent side="right" className="w-64">
+                                
+                                <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
                                 <nav className="flex flex-col gap-4 mt-8">
                                     <Link
                                         href="/home#inicio"

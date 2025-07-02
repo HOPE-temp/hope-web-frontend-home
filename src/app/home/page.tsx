@@ -18,54 +18,42 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section id="inicio" className="py-20 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Badge className="bg-yellow-500 text-yellow-900 hover:bg-yellow-400">
+      <section
+        id="inicio"
+        className="py-20 sm:py-28 md:py-32 text-white relative min-h-[520px] flex items-center"
+        style={{
+          backgroundImage: "url('/images/navbar-ddp2.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-700/40 to-teal-900/30 pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6 text-center lg:text-left">
+              <Badge className="bg-yellow-500 text-yellow-900 hover:bg-yellow-400 mx-auto lg:mx-0">
                 <Award className="h-4 w-4 mr-2" />
                 Ganadores Premio "El Búho" 2023
               </Badge>
-              <h1 className="text-5xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
                 10 Años Rescatando
                 <span className="text-yellow-300"> Vidas</span>
               </h1>
-              <p className="text-xl text-teal-100 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-teal-100 leading-relaxed">
                 La Asociación de Protección y Bienestar Ambiental – Animal HOPE ha rescatado, tratado y puesto en
                 adopción a más de <strong>13,000 animales</strong> en condiciones deplorables en Arequipa.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900 w-full sm:w-auto">
                   <PawPrint className="h-5 w-5 mr-2" />
                   Ver Mascotas
                 </Button>
                 <Button
                   size="lg"
-                  
-                  className="border-white text-white hover:bg-white hover:text-teal-600"
+                  className="border-white text-white hover:bg-white hover:text-teal-600 w-full sm:w-auto"
                 >
                   Contactanos
                 </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/images/mascotas01.png"
-                alt="Perros rescatados en HOPE Arequipa"
-                width={500}
-                height={400}
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="bg-green-100 p-2 rounded-full">
-                    <Heart className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">13,000+</p>
-                    <p className="text-sm text-gray-600">Animales Rescatados</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

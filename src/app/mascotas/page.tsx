@@ -143,7 +143,7 @@ export default function MascotasPage() {
                 <Card key={pet.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="relative">
                     <Image
-                      src={pet.images?.[0]?.url || "/placeholder.svg"}
+                      src={pet.images && pet.images.length > 0 ? pet.images[0] : "/placeholder.svg"}
                       alt={pet.nickname}
                       width={400}
                       height={300}

@@ -110,7 +110,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src="/images/hania-history.jpg?height=400&width=500"
                 alt="Hania Rodriguez, cofundadora de HOPE"
                 width={500}
                 height={400}
@@ -209,8 +209,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Historias de Éxito 
+  
+      {/* Historias de Éxito //TODO HISTORI DE EXITO
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">

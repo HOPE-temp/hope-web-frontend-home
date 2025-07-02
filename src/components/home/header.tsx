@@ -59,12 +59,6 @@ export default function Header() {
 							Adopción
 						</Link>
 						<Link
-							href="home/#donaciones"
-							className="text-gray-700 hover:text-teal-600 transition-colors"
-						>
-							Donaciones
-						</Link>
-						<Link
 							href="home/#contacto"
 							className="text-gray-700 hover:text-teal-600 transition-colors"
 						>
@@ -91,7 +85,7 @@ export default function Header() {
                                         Inicio
                                     </Link>
                                     <Link
-                                        href="home/nosotros"
+                                        href="home/#nosotros"
                                         className="text-lg font-medium hover:text-teal-600"
                                         onClick={() => setIsOpen(false)}
                                     >

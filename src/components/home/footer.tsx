@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 gap-y-12">
+          <div className="text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
               <div className="bg-teal-600 p-2 rounded-full">
                 <Heart className="h-6 w-6 text-white" />
               </div>
@@ -19,7 +19,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400">10 años rescatando y protegiendo animales abandonados en Arequipa.</p>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -36,7 +36,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold mb-4">Servicios</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -61,18 +61,18 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold mb-4">Contacto</h4>
             <div className="space-y-3 text-gray-400">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center md:justify-start space-x-2">
                 <MapPin className="h-4 w-4" />
                 <span>Arequipa, Perú</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center md:justify-start space-x-2">
                 <Phone className="h-4 w-4" />
                 <span>+51 989 769 292</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center md:justify-start space-x-2">
                 <Mail className="h-4 w-4" />
                 <span>info@hopearequipa.org</span>
               </div>

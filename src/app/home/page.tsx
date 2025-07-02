@@ -10,6 +10,7 @@ import SuccessStory from "@/components/home/success-story"
 import ActivityCard from "@/components/home/activity-card"
 import ContactForm from "@/components/home/contact-form"
 import ContactMap from "@/components/home/contact-map"
+import Link from "next/link"
 
 export default function HomePage() {
   return (
@@ -44,16 +45,23 @@ export default function HomePage() {
                 adopción a más de <strong>13,000 animales</strong> en condiciones deplorables en Arequipa.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900 w-full sm:w-auto">
-                  <PawPrint className="h-5 w-5 mr-2" />
-                  Ver Mascotas
-                </Button>
-                <Button
-                  size="lg"
-                  className="border-white text-white hover:bg-white hover:text-teal-600 w-full sm:w-auto"
-                >
-                  Contactanos
-                </Button>
+                <Link href="/mascotas" passHref>
+                  <Button
+                    size="lg"
+                    className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900 w-full sm:w-auto"
+                  >
+                    <PawPrint className="h-5 w-5 mr-2" />
+                    Ver Mascotas
+                  </Button>
+                </Link>
+                <Link href="#contacto" passHref>
+                  <Button
+                    size="lg"
+                    className="border-white text-white hover:bg-white hover:text-teal-600 w-full sm:w-auto"
+                  >
+                    Contactanos
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -63,7 +71,7 @@ export default function HomePage() {
       {/* Estadísticas */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             <StatsCard
               icon={<PawPrint className="h-8 w-8 text-teal-600" />}
               value="13,000+"
@@ -240,12 +248,12 @@ export default function HomePage() {
             nuestra ayuda. Sé parte del cambio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
-            <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900">
-              <PawPrint className="h-5 w-5 mr-2" />
-              Ver Adopciones
-            </Button>
-            
+            <Link href="/adopcion" passHref>
+              <Button size="lg" className="bg-yellow-500 hover:bg-yellow-400 text-yellow-900">
+                <PawPrint className="h-5 w-5 mr-2" />
+                Ver Adopciones
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

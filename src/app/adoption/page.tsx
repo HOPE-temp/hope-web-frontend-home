@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import perro from "/images/perro-banner.jpg"
+import perro from "/images/perro-banner (2).jpg"
 
 import Header from "@/components/home/header"
 import Footer from "@/components/home/footer"
@@ -21,7 +21,7 @@ export default function Page() {
       <section className="relative h-[300px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/perro-banner.jpg"
+            src="/images/perro-banner (2).jpg"
             alt=""
             layout="fill"
             objectFit="cover"
@@ -30,8 +30,8 @@ export default function Page() {
         </div>
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Proceso de Adopción</h1>
-            <p className="text-xl text-teal-100 mb-8">Estas a punto de darle un hogar a un animalito. Completa el proceso para iniciar tu solicitud</p>
+            <h3 className="text-4xl font-bold mb-4">Proceso de Adopción</h3>
+            <p className="text-4xl font-bold mb-4">Estas a punto de darle un hogar a un animalito. Completa el proceso para iniciar tu solicitud</p>
             <div className="flex justify-center space-x-4">
               
             </div>

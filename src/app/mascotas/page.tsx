@@ -42,8 +42,17 @@ export default function MascotasPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
-        <div className="container mx-auto px-4">
+      <section
+        className="py-16 text-white relative"
+        style={{
+          backgroundImage: "url('/images/collage-perritos.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-700/40 to-teal-900/30 pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Encuentra tu Compañero Perfecto</h1>
             <p className="text-xl text-teal-100 mb-8">Todos nuestros animales están esperando un hogar lleno de amor</p>

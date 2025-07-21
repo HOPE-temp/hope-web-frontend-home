@@ -23,7 +23,7 @@ export default function MascotasPage() {
   const [genderFilter, setGenderFilter] = useState("todos")  
 
   
-  const filteredPets = pets.filter((pet) => {
+  const filteredPets = (pets || []).filter((pet) => {
     const matchesSearch =
       pet.nickname?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       pet.breed?.toLowerCase().includes(searchTerm.toLowerCase())
@@ -58,7 +58,7 @@ export default function MascotasPage() {
             <p className="text-xl text-teal-100 mb-8">Todos nuestros animales están esperando un hogar lleno de amor</p>
             <div className="flex justify-center space-x-4">
               <div className="bg-white/20 px-4 py-2 rounded-full">
-                <span className="font-semibold">{pets.length}</span> mascotas disponibles
+                <span className="font-semibold">{(pets || []).length}</span> mascotas disponibles
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function MascotasPage() {
         <div className="container mx-auto px-4">
           <div className="mb-6">
             <p className="text-gray-600">
-              Mostrando {filteredPets.length} de {pets.length} mascotas
+              Mostrando {filteredPets.length} de {(pets || []).length} mascotas
             </p>
           </div>
           {loading ? (
@@ -202,9 +202,11 @@ export default function MascotasPage() {
                     </div>
 
                     <div className="flex gap-2 pt-2">
-                      <Button className="flex-1 bg-teal-600 hover:bg-teal-700">
-                        <PawPrint className="h-4 w-4 mr-2" />
-                          <Link href={`/adoption`}>Adoptar</Link>
+                      <Button className="flex-1 bg-teal-600 hover:bg-teal-700" asChild>
+                        <Link href={`/adoption`}>
+                          <PawPrint className="h-4 w-4 mr-2" />
+                          Adoptar
+                        </Link>
                       </Button>
                       <Button variant="outline" className="flex-1" asChild>
                         <Link href={`/mascotas/${pet.id}`}>Ver Más</Link>

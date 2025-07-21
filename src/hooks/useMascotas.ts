@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
-//TODO: get iamage pets from backend 
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 export function usePets() {
   const [pets, setPets] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -7,14 +9,23 @@ export function usePets() {
 
   useEffect(() => {
     setLoading(true)
-    fetch("https://hope-nest-backend-production.up.railway.app/animals")
-      .then((res) => res.json())
+    setError(null)
+    fetch(`${API_URL}/animals`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`)
+        }
+        return res.json()
+      })
       .then((data) => {
-        setPets(data)
+        const petsData = Array.isArray(data?.items) ? data.items : []
+        setPets(petsData)
         setLoading(false)
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error("Error fetching pets:", err)
         setError("Error al cargar mascotas")
+        setPets([])
         setLoading(false)
       })
   }, [])

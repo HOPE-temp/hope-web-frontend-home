@@ -84,7 +84,7 @@ export default function PetDetailPage({ params }: PageProps) {
                     src={images[activeImg]}
                     alt={`${pet.nickname} foto ${activeImg + 1}`}
                     fill
-                    className="rounded-t-lg object-cover"
+                    className="rounded-t-lg object-contain bg-white"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 800px"
                     priority={activeImg === 0}
                   />

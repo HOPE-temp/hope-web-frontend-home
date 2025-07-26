@@ -29,9 +29,9 @@ type SexAnimal = `${EnumSexAnimal}`;
 interface Animal {
   id: number;
   animalImages: AnimalImage[];
-  adoptedAnimals: AdoptedAnimal[];
-  medicalCheckups: MedicalCheckup[];
-  adoptionsTemp: Adoption[];
+  adoptedAnimals: any[];
+  medicalCheckups: any[];
+  adoptionsTemp: any[];
   nickname: string;
   type: TypeAnimal;
   breed: string;

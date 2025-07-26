@@ -1,13 +1,13 @@
 import { findOneAnimal } from '@/services/backend/animals';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  const aniamlId = params.id;
+export async function GET(req: NextRequest) {
+  // req.nextUrl es una instancia URL
+  // Extraemos el pathname y el último segmento que es el id
+  const segments = req.nextUrl.pathname.split('/');
+  const id = segments[segments.length - 1];
 
-  const parsedId = parseInt(aniamlId, 10);
+  const parsedId = parseInt(id, 10);
   const isValid = !isNaN(parsedId) && Number.isInteger(parsedId);
 
   if (!isValid) {
@@ -19,5 +19,5 @@ export async function GET(
 
   const data = await findOneAnimal(parsedId);
 
-  return Response.json(data);
+  return NextResponse.json(data);
 }

@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL;
-
 export function usePets() {
   const [pets, setPets] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

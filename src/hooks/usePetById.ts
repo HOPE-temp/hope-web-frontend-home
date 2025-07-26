@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL;
-
 export function usePetById(id: string | number) {
   const [pet, setPet] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -11,7 +9,7 @@ export function usePetById(id: string | number) {
     if (!id) return;
     setLoading(true);
     setError(null);
-    fetch(`${API_URL}/animals/${id}`)
+    fetch(`/animals/${id}`)
       .then(res => {
         if (!res.ok) throw new Error('No encontrado');
         return res.json();

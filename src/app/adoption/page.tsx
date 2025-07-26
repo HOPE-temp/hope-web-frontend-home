@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import perro from "/images/perro-banner (2).jpg"
 
 import Header from "@/components/home/header"
 import Footer from "@/components/home/footer"
@@ -21,7 +20,7 @@ export default function Page() {
       <section className="relative h-[300px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/perro-banner (2).jpg"
+            src="/images/perro-banner-2.webp"
             alt=""
             layout="fill"
             objectFit="cover"

@@ -19,15 +19,18 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        id="inicio"
+      <section id="inicio"
         className="py-20 sm:py-28 md:py-32 text-white relative min-h-[520px] flex items-center"
-        style={{
-          backgroundImage: "url('/images/navbar-ddp2.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+        >
+        {/* Imagen de fondo */}
+        <Image
+          src="/images/navbar-ddp2.webp"
+          alt="Fondo de perritos"
+          fill       // Ocupa todo el contenedor padre
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          quality={75}
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-teal-700/40 to-teal-900/30 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">

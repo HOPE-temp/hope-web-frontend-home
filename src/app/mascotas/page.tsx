@@ -42,15 +42,16 @@ export default function MascotasPage() {
       <Header />
 
       {/* Hero Section */}
-      <section
-        className="py-16 text-white relative"
-        style={{
-          backgroundImage: "url('/images/collage-perritos.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        
+      <section className="py-16 text-white relative overflow-hidden">
+      {/* Imagen de fondo */}
+      <Image
+        src="/images/collage-perritos.webp"
+        alt="Fondo de perritos"
+        fill       // Ocupa todo el contenedor padre
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
+        quality={75}
+        priority
+      />
         <div className="absolute inset-0 bg-gradient-to-r from-teal-700/40 to-teal-900/30 pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
